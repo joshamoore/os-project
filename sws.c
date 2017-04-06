@@ -138,6 +138,14 @@ void short_job_first( int fd ) {
 void mlfb( int fd ) {
   serve_client(fd);
 }
+void *thread_exec( void *thread_id ) {
+  int tid;
+  tid = (int)thread_id;
+  printf("Thread %d\n", tid);
+  /* Exit the thread */
+  pthread_exit(NULL);
+}
+
 /* This function is where the program starts running.
  *    The function first parses its command line parameters to determine port #
  *    Then, it initializes, the network and enters the main loop.
@@ -182,11 +190,13 @@ int main( int argc, char **argv ) {
     thread_count = threads; /* update the number of threads */
     printf("Initializing %d threads\n", thread_count);
   }
+  /* initialize work queue */
 
+  /* initialize threads */
   pthread_t tid[thread_count];
   for ( int i=0; i < thread_count; i++ ) {
     printf("initializing thread %d\n", i);
-    pthread_create(&tid[i], NULL, NULL, NULL); 
+    pthread_create(&tid[i], NULL, thread_exec, (void*) i); 
   }
 
   network_init( port );                             /* init network module */
