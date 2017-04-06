@@ -1,0 +1,8 @@
+Description:
+Connect to the server running on port 1024
+
+Request 2 files from the server
+Connect immedietely and wait 1 second to request empty.txt
+Wait half a second to connect and then immedietely request empty.txt
+
+Output:
