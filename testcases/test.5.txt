@@ -1,0 +1,8 @@
+Description:
+Connect to the server running on port 1024
+
+Request 3 different files all at the same time
+Similar to test.4.in, but test.4.in makes requests half a second apart
+Note that file2.txt is a large text file
+
+Output:

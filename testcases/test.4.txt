@@ -1,0 +1,7 @@
+Description:
+Connect to the server running on port 1024
+
+Request 3 different files
+Note that file2.txt is a large text file
+
+Output:

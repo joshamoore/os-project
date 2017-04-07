@@ -1,0 +1,7 @@
+Description:
+Connect to the server running on port 1024
+
+Makes 12 file requests all at the same time
+Note that file2.txt is a large text file
+
+Output:
